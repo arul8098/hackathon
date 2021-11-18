@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--google icon--> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="style.css"/>
+    <title>gmail clone</title>
+</head>
+<body>
+    <div class="header">
+    <div class ="header_left">
+        <span class="material-icons">
+            menu
+            </span>
+        <img
+        src="data:image/jpeg;base64,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"
+        alt=""/>
+</div>
+ <div class ="header_middle">
+    <span class="material-icons">
+        search
+        </span>
+        <input type="text"placeholder="Search Mail"/>
+        <span class="material-icons">
+            arrow_drop_down
+            </span>
+
+ </div>
+ <div class ="header_right">
+    <span class="material-icons">
+        apps
+        </span>
+        <span class="material-icons">
+            notifications
+            </span>
+            <span class="material-icons">
+                account_circle
+                </span>
+                
+
+
+
+</div>
+</div>
+<!--header ends-->
+<!--main body-->
+<div class="main_body">
+<!--side bar starts-->
+<div class="sidebar">
+    <button class="sidebar_compose">
+        <span class="material-icons">
+            add
+            </span>
+            
+        <p id="demo" onclick ="myFunction()">compose</p>
+    </button>
+    <div class="sidebarOption sidebarOption_active">
+        <span class="material-icons">
+            mail
+            </span>
+            <h3>Inbox</h3>
+    </div>
+    <div class="sidebarOption">
+        <span class="material-icons">
+            star
+            </span>
+            <h3>Starred</h3>
+    </div>
+    <div class="sidebarOption">
+        <span class="material-icons">
+            label_important
+            </span>
+            <h3>Important</h3>
+    </div>
+    <div class="sidebarOption">
+        <span class="material-icons">
+            near_me
+            </span>
+            <h3>Sent</h3>
+    </div>
+    <div class="sidebarOption">
+        <span class="material-icons">
+            note_alt
+            </span>
+            <h3>Draft</h3>        
+    </div>
+    <div class="sidebarOption">
+        <span class="material-icons">
+            expand_more
+            </span>
+            <h3>More</h3>    
+    </div>
+
+    <div class="sidebar_footer">
+        <div class="sidebar_footericons">
+            <span class="material-icons">
+                person
+                </span>
+                <span class="material-icons">
+                    duo
+                    </span>
+                    <span class="material-icons">
+                        phone
+                        </span>         
+        </div>
+    </div>
+</div>
+<div class="emailList">
+    <div class="emailList_settings">
+        <div class="emailList_settingLeft">
+        <input type="checkbox" />
+        <span class="material-icons">
+            arrow_drop_down
+            </span>
+            <span class="material-icons">
+                redo
+                </span>  
+                <span class="material-icons">
+                    more_vert
+                    </span>
+                       
+        </div>
+        <div class="emailList_settingRight">
+            <span class="material-icons">
+                chevron_left
+                </span>
+                <span class="material-icons">
+                    chevron_right
+                    </span>   
+                    <span class="material-icons">
+                        keyboard_hide
+                        </span>
+                        <span class="material-icons">
+                            settings
+                            </span>    
+        </div>
+    </div>
+    <div class="emailList_section">
+         <div class="section section_selected">
+            <span class="material-icons ">
+                mail
+                </span> 
+                <h4>Primary</h4>    
+
+         </div>
+         <div class="section ">
+            <span class="material-icons">
+                people
+                </span> 
+                <h4>Social</h4>    
+
+         </div>
+         <div class="section ">
+            <span class="material-icons">
+                local_offer
+                </span> 
+                <h4>Promotions</h4>    
+
+         </div>
+    </div>
+    <div class="emailList_list">
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+        <div class="emailRow">
+            <div class="emailRow_options">
+        <input type="checkbox"/>
+        <span class="material-icons">
+            star_border
+            </span>
+            <span class="material-icons">
+                label_important
+                </span>
+            </div>
+            <h3 class="emailRow_title">Hackathon</h3>
+            <div class="emailRow_message">
+                <h4>
+                    You have a task to do 
+                    <span class="emailRow_description">-to create a gmailclone </span> 
+                </h4>
+
+            </div>
+            <p class="emailRow_time">
+                10pm</p>
+            
+                
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+<script>
+    function myFunction(){
+        alert("clicked ");
+    }
+</script>
